@@ -1,0 +1,10 @@
+services:
+  playitgg-tunnel:
+    image: ghcr.io/playit-cloud/playit-agent:0.15
+    network_mode: host
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+    restart: unless-stopped
+networks:
+  mc_network:
+    external: true
